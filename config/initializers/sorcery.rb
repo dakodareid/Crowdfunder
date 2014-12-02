@@ -23,7 +23,7 @@ Rails.application.config.sorcery.configure do |config|
 
   # Set domain option for cookies; Useful for remember_me submodule.
   # Default: `nil`
-  #
+  
   # config.cookie_domain =
 
 
@@ -307,7 +307,7 @@ Rails.application.config.sorcery.configure do |config|
     # mailer class. Needed.
     # Default: `nil`
     #
-    # user.reset_password_mailer =
+    user.reset_password_mailer = UserMailer
 
 
     # reset password email method on your mailer class.

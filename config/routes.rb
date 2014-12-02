@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
- root 'projects#index'
+
+  root 'projects#index'
 
   resources :projects, only: [:index, :show, :new, :create] do 
     resources :rewards, only: [:new, :create, :show] 
   end
 
+  resources :users, only: [:new, :edit, :create, :show] 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
