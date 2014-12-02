@@ -24,5 +24,4 @@ private
   def project_params
     params.require(:project).permit(:title, :description, reward_attributes: [:amount, :description])
   end
-
 end
