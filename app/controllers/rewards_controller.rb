@@ -16,6 +16,11 @@ class RewardsController < ApplicationController
     @reward = Reward.find(params[:id])
   end
 
+  def destroy
+      @reward = Reward.find(params[:id])
+      @reward.destroy
+  end
+
   private
   def reward_params
     params.require(:reward).permit(:amount, :description, :project_id)
