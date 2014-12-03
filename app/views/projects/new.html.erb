@@ -18,11 +18,12 @@
 
 	<p><strong>Add Rewards</strong></p>
 	
-	<%= f.fields_for :rewards do |r| %>
+	<div id="rewards">
+		<%= f.fields_for :rewards do |r| %>
 			<%= render 'reward_fields', :f => r %>
-	<% end %> 
+		<% end %> 
+		<%= link_to_add_association 'Add a reward', f, :rewards %><br />  
+		<%= f.submit %>
+	</div>
 	
-	<%= link_to_add_association 'Add a reward', f, :rewards %><br />  
-	<%= f.submit %>
-
 <% end %> 
