@@ -1,11 +1,16 @@
 
 <% @project.rewards.each do |reward| %> 
 	
-	<h3>Pledge</h3>
+	<h3>Reward</h3>
 	<p><%= reward.amount %></p>
 	<p><%= reward.description %></p>
 
-	<%= link_to 'Get this reward!', user_path({reward_id: reward.id}) %>
+	<%= form_for Pledge.new do |f| %>
+		<%= f.hidden_field :amount, value: reward.amount %>
+		<%= f.hidden_field :reward_id, value: reward.id %>
+		<%= f.hidden_field :project_id, value: @project.id %>
+		<%= f.submit "Pledge this!" %>
+	<% end %>
 
 <% end %>
 

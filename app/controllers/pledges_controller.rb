@@ -4,10 +4,11 @@ class PledgesController < ApplicationController
 	end
 
 	def create
-		@user = User.find(params[:user_id])
-    	@pledge = @user.pledge.build(pledge_params)
+    	@pledge = Pledge.new(pledge_params)
+    	@pledge.user_id = current_user.id
+
 	    if @pledge.save
-	      redirect_to user_path(@user)
+	      redirect_to user_path(current_user)
 	    else
 	      render :new
 	    end
@@ -19,11 +20,11 @@ class PledgesController < ApplicationController
 
 	def destroy
 		@pledge = Pledge.find(params[:id])
-    @pledge.destroy
+    	@pledge.destroy
 	end
 
 	private
-  def pledge_params
-    params.require(:pledge).permit(:amount, :project_id)
-  end
+    def pledge_params
+      params.require(:pledge).permit(:amount, :reward_id, :project_id)
+    end
 end
