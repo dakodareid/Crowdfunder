@@ -1,12 +1,13 @@
 class PledgesController < ApplicationController
 	def new
+		@pledge = Pledge.new
 	end
 
 	def create
 		@user = User.find(params[:user_id])
     @pledge = @user.pledge.build(pledge_params)
     if @pledge.save
-      redirect_to project_path(@project)
+      redirect_to user_path(@user)
     else
       render :new
     end

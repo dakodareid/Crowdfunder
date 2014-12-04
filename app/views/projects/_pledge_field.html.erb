@@ -1,0 +1,13 @@
+
+<% @project.rewards.each do |reward| %> 
+	
+	<h3>Pledge</h3>
+	<p><%= reward.amount %></p>
+	<p><%= reward.description %></p>
+
+	<%= link_to 'Get this reward!', user_path({reward_id: reward.id}) %>
+
+<% end %>
+
+
+

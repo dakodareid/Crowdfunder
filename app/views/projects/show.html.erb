@@ -1,10 +1,14 @@
-<h1>Projects#show</h1>
-
 <h1><%= @project.title %></h1><br />
 
 <p><%= @project.description %></p>
-<p><%= @project.goal %></p>
+<p>$ <%= @project.goal %></p>
 <p><%= @project.start_date %></p>
 <p><%= @project.end_date %></p> 
+
+<div>
+	<%= render 'pledge_field' %>
+</div><br />
+
+
 
 <%= link_to 'back', projects_url %>
