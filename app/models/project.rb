@@ -1,8 +1,8 @@
 class Project < ActiveRecord::Base
-	belongs_to :owners, class_name: "User"
+	belongs_to :owner, class_name: "User"
 
 	has_many :pledges
-  	has_many :backers, through: :pledges, source: :user
+  has_many :backers, through: :pledges, source: :user
 
 	has_many :rewards
 	

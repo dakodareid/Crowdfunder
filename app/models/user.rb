@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
 
   validates :email, uniqueness: true
 
-  has_many :owned_projects, class_name: "Project"
+  has_many :owned_projects, class_name: "Project", foreign_key: "owner_id"
 
   has_many :pledges
   has_many :backed_projects, through: :pledges, source: :project
