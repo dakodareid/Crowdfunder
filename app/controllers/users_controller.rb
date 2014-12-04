@@ -14,7 +14,7 @@ class UsersController < ApplicationController
   end
 
   def show
-
+    @pledges = current_user.pledges 
   end
 
   def edit

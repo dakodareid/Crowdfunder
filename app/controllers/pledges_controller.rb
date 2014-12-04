@@ -5,12 +5,12 @@ class PledgesController < ApplicationController
 
 	def create
 		@user = User.find(params[:user_id])
-    @pledge = @user.pledge.build(pledge_params)
-    if @pledge.save
-      redirect_to user_path(@user)
-    else
-      render :new
-    end
+    	@pledge = @user.pledge.build(pledge_params)
+	    if @pledge.save
+	      redirect_to user_path(@user)
+	    else
+	      render :new
+	    end
 	end
 
 	def edit

@@ -1,9 +1,6 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<% @pledges.each do |pledge| %>
 
-<%= @Pledges.each do |pledge| %>
-
-<p><%= pledge.amount %></p>
-<p><%= pledge.description %></p>
+	<p><%= pledge.amount %></p>
+	<p><%= pledge.description %></p>
 
 <% end %>
