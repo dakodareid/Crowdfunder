@@ -1,29 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Crowdfunder</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag "vendor/modernizr" %>
   <%= csrf_meta_tags %>
 </head>
 <body class"<%= controller_name %> <%= action_name %>">
 
   <% if flash[:notice] %>
-  	<p id="notice"><%= flash[:notice] %></p>
+    <p id="notice"><%= flash[:notice] %></p>
   <% end %>
 
-  <div id="nav">
-    <% if current_user %>
-      <%= link_to "Logout", :logout %>
-    <% else %>
-      <%= link_to "Register", new_user_path %> |
-      <%= link_to "Login", :login %>
-    <% end %>
-    <%= link_to "Projects", projects_path %> |
-    <% if current_user %>
-      <%= link_to "User", user_path(current_user) %>
-    <% end %>
-  </div>
+  <%= render 'layouts/navbar' %>
 
   <div>
     <p id="notice"><%= flash[:notice] %></p>
@@ -31,6 +23,7 @@
   </div>
 
   <%= yield %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 
 </body>
 </html>
