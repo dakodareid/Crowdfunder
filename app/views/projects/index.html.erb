@@ -1,9 +1,10 @@
 <% @projects.each do |project| %>
-	<h1><%= link_to project.title, project_path(project) %></h1>
+	<div class="project-block">
+		<h1><%= link_to project.title, project_path(project) %></h1>
 
-	<p><%= project.description %></p>
-	<p><%= project.goal %></p>
-	<p><%= project.start_date %></p>
-	<p><%= project.end_date %></p><br/> 
-
+		<p><%= project.description %></p>
+		<p><%= project.goal %></p>
+		<p><%= project.start_date %></p>
+		<p><%= project.end_date %></p><br/> 
+	</div>
 <% end %>

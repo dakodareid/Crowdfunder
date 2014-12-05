@@ -1,3 +1,20 @@
-// Place all the styles related to the Projects controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.project-block {
+	border: 6px dotted #B777BB;
+	margin: 5px;
+	float: left;
+	width: 49%;
+	text-align: center;
+	background-color: #61B3C8;
+	border-radius: 3px;
+	color: white;
+}
+
+a {
+	color: #BB5E54;
+	font-family: ComicSans;
+	font-size: 60px;
+}
+
+a.hover {
+	color: #E4D90D;
+}
